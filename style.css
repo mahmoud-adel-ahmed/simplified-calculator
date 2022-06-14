@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.1s linear;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #00aaff, #00ff6c);
+}
+
+.calculator {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 10rem);
+  grid-template-rows: minmax(12rem, auto) repeat(5, 10rem);
+}
+
+.calculator > button {
+  font-size: 2.5rem;
+  border: 0.1rem solid #fff;
+  outline: 0;
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+
+.calculator > button:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+button[data-operation],
+button[data-delete],
+button[data-clear-all] {
+  color: rgb(245, 65, 65);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1; /* 1 / 5 */
+  background: rgba(0, 0, 0, 0.8);
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: end;
+  padding: 1rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .prev-operand {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.9rem;
+}
+
+.output .current-operand {
+  color: rgba(255, 255, 255, 1);
+  font-size: 2.9rem;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
